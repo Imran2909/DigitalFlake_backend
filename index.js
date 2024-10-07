@@ -40,7 +40,7 @@ const transporter = nodemailer.createTransport({
     const { email } = req.body; // Extract email from the request body
   
     // Reset link - can include a token for security purposes
-    const resetLink = `https://the-digitalflake-assignment.netlify.app/ResetPassword?email=${encodeURIComponent(email)}`;
+    const resetLink = `${process.env.LINK}${encodeURIComponent(email)}`;
   
     const mailOptions = {
       from: "sutarimran47@gmail.com", // Sender address
